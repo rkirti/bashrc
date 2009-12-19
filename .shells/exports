@@ -1,0 +1,26 @@
+# 19/12/09 11:51:08 
+# Kirtika B Ruchandani <kirtibr@gmail.com> 
+
+
+export PATH=$HOME/scripts:$HOME/.local/bin:/usr/local/bin:$PATH
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+export EDITOR='gvim' ALTERNATE_EDITOR='vim' VISUAL='gvim'
+
+
+# Bash History
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='&:clear:ls:cd:[bf]g:exit:[ t\]*'
+
+# Bitbake Env settings
+export BBPATH=/stuff/maemo-angstrom:/stuff/build:/stuff/openembedded
+export PATH=/stuff/bitbake/bin:$PATH
+
+# Proxy settings
+#export http_proxy='127.0.0.1:5050'
+#export https_proxy='127.0.0.1:5050'
+#export ftp_proxy='127.0.0.1:5050'
+export http_proxy=
+export https_proxy=
+export ftp_proxy=
+
