@@ -3,13 +3,30 @@ function ga(){
 }
 
 function gc(){
-    git-commit -m $1
+    git commit -m "$*"
 }
+
+
+function revert(){
+    git reset --hard $1
+}
+
 
 function show ()
 {
     apt-cache search $1
 }
+
+
+function giveme ()
+{
+    sudo apt-get install "$@"
+}
+
+
+
+
+
 
 function extract () {
         if [ -f $1 ] ; then

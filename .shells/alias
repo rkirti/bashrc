@@ -11,6 +11,10 @@ alias grep='grep --color -n'
 alias smi='sudo make install'
 alias l='ls -CF'
 
+# This one is to take care of make
+# Give me a nice, distinguishable make output
+alias make='clear && make'
+alias m='make'
 
 
 # Some more, to avoid mistakes
@@ -32,6 +36,7 @@ alias dcfmail='ssh rkirti@10.6.5.215'
 # Git Commands
 # Add and Commit are used as functions
 alias gpo='git push orig'
+alias gp='git pull'
 alias gs='git status'
 alias gd='git-diff'
 alias gr='git-reflog'
