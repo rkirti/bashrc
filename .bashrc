@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 
 # Welcome message 
-echo -ne "Welcome,${USER}. It's "; date '+%A, %B %-d %Y'
+echo -ne "Welcome,${USER}. It's "; date '+F'
 # echo -e "And now your moment of Zen:"; fortune
 echo
 echo I am collecting some hardware information for you.
