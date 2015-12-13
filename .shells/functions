@@ -1,3 +1,4 @@
+# git abbr.
 function ga(){
     git-add $1
 }
