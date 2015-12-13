@@ -12,7 +12,7 @@
 ## Install
 
 * Download 
-    `git clone https://github.com/onebraveman/bashrc.git` ~
+    `git clone https://github.com/rkirti/bashrc.git` ~
 * Copy and Source
 ```
     cp -r .shells .bashrc ~
