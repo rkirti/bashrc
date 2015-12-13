@@ -4,7 +4,7 @@
 
 export PATH=$PATH:$HOME/scripts:$HOME/.local/bin:/usr/local/bin
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
-export EDITOR='vim' ALTERNATE_EDITOR='vim' VISUAL='gvim'
+export EDITOR='vim' ALTERNATE_EDITOR='vim' VISUAL='vim'
 
 
 # Bash History
