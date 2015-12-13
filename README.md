@@ -9,7 +9,7 @@
 * git abbr.
 * cd special dir. You can add your frequently-used dir to `cpro` & `cdat` in `~/.bashrc`.
 
-# Install
+## Install
 
 * Download 
     `git clone https://github.com/onebraveman/bashrc.git` ~
@@ -19,6 +19,6 @@
     source ~/.bashrc
 ```
 
-# What you can do?
+## What you can do?
 
 You can add your special alias cmd to `.shells/alias` file.
