@@ -19,6 +19,6 @@
     source ~/.bashrc
 ```
 
-* What you can do?
+# What you can do?
 
 You can add your special alias cmd to `.shells/alias` file.
