@@ -1,7 +1,3 @@
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 # Bash history
 HISTSIZE=2500
 HISTFILESIZE=2500
