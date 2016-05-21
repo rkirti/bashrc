@@ -1,3 +1,4 @@
+# Functions to aid git workflow
 function ga(){
     git-add $1
 }
@@ -6,28 +7,22 @@ function gc(){
     git commit -m "$*"
 }
 
-
 function revert(){
     git reset --hard $1
 }
 
-
+# Simplify apt-get search and install
 function show ()
 {
     apt-cache search $1
 }
-
 
 function giveme ()
 {
     sudo apt-get install "$@"
 }
 
-
-
-
-
-
+# Useful unarchiver!
 function extract () {
         if [ -f $1 ] ; then
                 case $1 in
@@ -48,7 +43,6 @@ function extract () {
         fi
 }
 
-
 function psg() {
         if [ ! -z $1 ] ; then
                 echo "Grepping for processes matching $1..."
@@ -58,4 +52,28 @@ function psg() {
         fi
 }
 
+# Find, needs 'sudo apt-get install silversearcher-ag'
+# Ignores sandbox environments, in this case, folder
+# starting with chroot/
+function f()
+{
+    ag --ignore chroot "$@"
+}
 
+# Because I am a lazy bum, and this is
+# surpisingly helpful..
+function up()
+{
+    for i in `seq 1 $1`;
+    do
+        cd ../
+    done;
+}
+
+# Required for the prompt to show git status
+function parse_git_dirty {
+[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}

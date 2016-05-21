@@ -7,31 +7,32 @@ alias pms='sudo pm-suspend'
 alias psg='ps -A | grep'
 alias se='sudo gvim'
 alias e='gvim'
-alias grep='grep --color -n'
 alias smi='sudo make install'
 alias l='ls -CF'
+
+# Cool colors for man pages
+alias man="TERMINFO=~/.terminfo TERM=mostlike LESS=C PAGER=less man"
+
+# Enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 # This one is to take care of make
 # Give me a nice, distinguishable make output
 alias make='clear && make'
 alias m='make'
 
-
 # Some more, to avoid mistakes
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-
-
-# SSH Alias
-alias dcf='ssh rkirti@10.6.16.16'
-alias dcf1='ssh rkirti@10.6.16.10'
-alias dcf2='ssh rkirti@10.6.16.23'
-alias dcfmail='ssh rkirti@10.6.5.215'
-
-
-
-
 
 # Git Commands
 # Add and Commit are used as functions
@@ -42,16 +43,9 @@ alias gd='git-diff'
 alias gr='git-reflog'
 alias glf='git-ls-files'
 
+# Useful for C/C++ work
+# R for recursive, p10 to show file paths
+alias scope='cscope -CR -p10'
 
-
-# Acad aliases 
-alias cs351='cd ~/code/cs351'
-alias cs331='cd ~/code/cs331'
-alias cs370='cd ~/code/cs370'
-
-
-
-# Shortcut to test quick changes to bashrc
-alias reload='source ~/.bashrc'
-
-
+# Quickly load bashrc
+alias gogo='source ~/.bashrc'

@@ -43,7 +43,7 @@ PROMPT_COMMAND=pre_prompt
 case "$TERM" in
 xterm)
     PS1="$bblue┌─($orange\u@\h \$(date \"+%a, %d %b %y\")$bblue)─\${fill}─($orange\$newPWD\
-$bblue)─┐\n$bblue└─($orange\$(date \"+%H:%M\") \$$bblue)─>$white "
+        $bblue)─┐\n$bblue└─($orange\$(date \"+%H:%M\") $(parse_git_branch) \$$bblue)─>$white "
     ;;
 screen)
     PS1="$bblue┌─($orange\u@\h \$(date \"+%a, %d %b %y\")$bblue)─\${fill}─($orange\$newPWD\
@@ -51,23 +51,13 @@ $bblue)─┐\n$bblue└─($orange\$(date \"+%H:%M\") \$$bblue)─>$white "
     ;;    
     *)
     PS1="┌─(\u@\h \$(date \"+%a, %d %b %y\"))─\${fill}─(\$newPWD\
-)─┐\n└─(\$(date \"+%H:%M\") \$)─> "
+        )─┐\n└─(\$(date \"+%H:%M\") $(parse_git_branch) \$)─> "
     ;;
 esac
-
-
-
-# Cool colors for Man Pages
-alias man="TERMINFO=~/.terminfo TERM=mostlike LESS=C PAGER=less man"
-
-
-     
 
 # Determine what prompt to display:
 # 1.  Display simple custom prompt for shell sessions started
 #     by script.  
-# 2.  Display "bland" prompt for shell sessions within emacs or 
-#     xemacs.
 # 3   Display promptcmd for all other cases.
 
 function load_prompt () {
@@ -77,10 +67,7 @@ function load_prompt () {
 
     if  [[ $parent_process == script* ]]; then
         PROMPT_COMMAND=""
-        PS1="\t - \# - \u@\H { \w }\$ "
-    elif [[ $parent_process == emacs* || $parent_process == xemacs* ]]; then
-        PROMPT_COMMAND=""
-        PS1="\u@\h { \w }\$ "
+        PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
     else
         export DAY=$(date +%A)
         PROMPT_COMMAND=pre_prompt
