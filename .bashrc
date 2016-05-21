@@ -24,14 +24,11 @@ source .shells/prompt   # Fancy prompt with time and current working dir
 source .shells/git      # Conveniences - Display current branch etc
 
 # Welcome message
-# Tone the bling up/down as needed
 echo -ne "Good Morning, $NICKNAME! It's "; date '+%A, %B %-d %Y'
 echo -e "And now your moment of Zen:"; fortune
 echo
-echo I am collecting some hardware information for you.
-echo -e "Here it is:"; sensors  # Needs: 'sudo apt-get install lm-sensors'
-uptime                          # Needs: 'sudo apt-get install lsscsi'
+echo "Hardware Information:"
+sensors  # Needs: 'sudo apt-get install lm-sensors'
+uptime   # Needs: 'sudo apt-get install lsscsi'
 lsscsi
 free -m
-
-
