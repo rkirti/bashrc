@@ -36,12 +36,12 @@ alias mv='mv -i'
 
 # Git Commands
 # Add and Commit are used as functions
-alias gpo='git push orig'
+alias gpo='git push origin master'
 alias gp='git pull'
 alias gs='git status'
-alias gd='git-diff'
-alias gr='git-reflog'
-alias glf='git-ls-files'
+alias gd='git diff'
+alias gr='git reflog'
+alias glf='git ls-files'
 
 # Useful for C/C++ work
 # R for recursive, p10 to show file paths
