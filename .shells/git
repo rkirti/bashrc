@@ -1,0 +1,35 @@
+#!/bin/bash 
+
+source /etc/bash_completion.d/git 
+source /etc/bash_completion.d/git5 
+
+# Very useful for stash handling
+function show-stash() 
+{
+    git stash show -p stash@{$1};
+}
+
+function stash-len() 
+{
+    git stash list | wc -l;
+}
+
+function drop-stash() 
+{
+    git stash drop stash@{$1};
+}
+
+alias ga='git add'
+alias gb='git br' 
+alias gd='git diff' 
+alias gdc='git diff --cached' 
+alias gl='git log'
+alias gp='git pull' 
+alias gs='git status' 
+alias gst='git stash' 
+alias gplo='git pull origin master'
+alias gbv='git branch -vv' 
+
+# Useful when working on a branch and 
+# want to summarize changes against master
+alias gdmno='git diff master  --name-only'
