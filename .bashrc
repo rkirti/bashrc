@@ -28,7 +28,7 @@ echo -ne "Good Morning, $NICKNAME! It's "; date '+%A, %B %-d %Y'
 echo -e "And now your moment of Zen:"; fortune
 echo
 echo "Hardware Information:"
-sensors  # Needs: 'sudo apt-get install lm-sensors'
-uptime   # Needs: 'sudo apt-get install lsscsi'
-lsscsi
+sensors  # Needs: 'sudo apt install lm-sensors'
+uptime   # included in every linux distro nowadays
+lsscsi   # needs 'sudo apt install lsscsi'
 free -m
